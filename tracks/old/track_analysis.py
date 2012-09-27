@@ -1,5 +1,5 @@
 ### this module implements the analysis of tracks
-from track_extract_gui import extract_track
+from track_extract_final import extract_track
 from landscape import structured_space
 
 import os, os.path

@@ -5,9 +5,9 @@ from landscape import structured_space
 import os, os.path
 
 
-def analyze_track(filename):
+def analyze_track(filename, manhattan_heuristic):
 
-	(states, start_state, t) = extract_track(filename, False)
+	(states, start_state, t) = extract_track(filename, manhattan_heuristic)
 
 	space = structured_space(states, start_state)
 	
@@ -43,7 +43,7 @@ f = open(inform_filename, "w")
 
 for root, dirs, files in os.walk(dirtocheck):
     for filename in files:
-	results = analyze_track(filename)      	
+	results = analyze_track(filename, False)      	
 	lrta_costs = [sum(partial_results[0]) for partial_results in results]
 	lrtak_costs = [sum(partial_results[1]) for partial_results in results]
 

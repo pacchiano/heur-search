@@ -3,7 +3,7 @@ from Tkinter import *
 from time import time
 import math
 
-from track_extract_gui import extract_track
+from track_extract_final import extract_track
 
 class dummyDisplay:
     def update(self, position_state):
@@ -77,7 +77,6 @@ class track_space(Frame):
 
     def simulate_space_lrta(self): #### LRTA* 
         self.total_cost = 0
-        #self.start = s
 	self.focus_state = self.start
 	### display managment
         self.display.printdisplay()
@@ -102,8 +101,7 @@ class track_space(Frame):
             self.text.insert(INSERT, toPrint)
             self.text.pack()
             return self.after(100,self.simulate_space_lrta_helper)
-        #else:
-        #    return self.total_cost
+
 
     def simulate_space_lrtak(self):
         self.total_cost = 0
